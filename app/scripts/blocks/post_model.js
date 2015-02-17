@@ -47,9 +47,30 @@ lstb.Post = Backbone.Model.extend({
 		return false;
 	},
 
-	save: function() {
-		console.log(this.toJSON());
-		console.log('save');
+	save: function(options) {
+		this.set(options);
+		var posts = lstb.dataStorage.getData('/posts/'),
+			key = this.get('key');
+
+		if(!posts || !posts.length) {
+			posts = [];
+		}
+
+		if( _.indexOf(posts, key)===-1 ) {
+			posts.unshift(key);
+			lstb.dataStorage.setData( 
+				'/posts/', 
+				posts
+			);
+		}
+
+		lstb.dataStorage.setData( key, {
+			key: key,
+			title: this.get('title'),
+			content: this.get('content')
+		})
+
+		this.trigger('save');
 	},
 
 	activate: function() {
@@ -59,7 +80,6 @@ lstb.Post = Backbone.Model.extend({
 			this.fetch();
 		} else if(this.get('action') === 'add'){
 			this.set('can_edit', true);
-			this.set('key', Date.now());
 			this.trigger('load:start');
 			this.trigger('load:success');
 		} else {

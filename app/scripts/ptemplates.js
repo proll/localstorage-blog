@@ -9,8 +9,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  
-  return "\n    <button>Save</button>\n";
+  var buffer = "", stack1;
+  buffer += "\n    <a class=\"btn post__save\" href=\"/post/";
+  if (stack1 = helpers.key) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.key; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "/\">Save</a>\n";
+  return buffer;
   }
 
 function program3(depth0,data) {
@@ -30,7 +35,7 @@ function program5(depth0,data) {
   return " disabled=\"disabled\"";
   }
 
-  buffer += "<div class=\"post__header\">\n";
+  buffer += "<div class=\"post__header\">\n    <a href=\"/\" class=\"post__back\">../back</a>\n";
   stack1 = helpers['if'].call(depth0, depth0.can_edit, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n</div>\n<form action=\"\" class=\"post__form\">\n    <input type=\"text\" class=\"post__title\"";
@@ -47,7 +52,7 @@ function program5(depth0,data) {
   if (stack1 = helpers.content) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.content; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</textarea>\n</form>\n";
+    + "</textarea>\n</form>";
   return buffer;
   });
 

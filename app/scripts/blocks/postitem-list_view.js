@@ -32,7 +32,11 @@ lstb.PostItemListView = Backbone.View.extend({
 	},
 
 	addPost: function (model, collection, options) {
-		this.$cont.append(model.view.$el);
+		if(options && options.at === 0) {
+			this.$addpost_cont.after(model.view.$el);
+		} else {
+			this.$cont.append(model.view.$el);
+		}
 	},
 
 	showStartLoad: function () {

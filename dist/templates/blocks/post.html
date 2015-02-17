@@ -1,6 +1,7 @@
 <div class="post__header">
+    <a href="/" class="post__back">../back</a>
 {{#if can_edit}}
-    <button>Save</button>
+    <a class="btn post__save" href="/post/{{key}}/">Save</a>
 {{else}}
     <a class="btn" href="/post/{{key}}/edit">Edit</a>
 {{/if}}

@@ -1,5 +1,4 @@
 lstb.PostItemCollection = Backbone.Collection.extend({
-	url: "/posts/",
 	model: lstb.PostItem,
 	more: true,
 	total: 0,
@@ -36,7 +35,7 @@ lstb.PostItemCollection = Backbone.Collection.extend({
 				limit: 		30,
 			};
 
-			var resp = lstb.dataStorage.getData(this.url, data);
+			var resp = lstb.dataStorage.getPortionData('/posts/', data);
 			if(resp) {
 				this.more = resp.more;
 				this.add(resp.data);

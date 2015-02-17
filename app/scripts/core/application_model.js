@@ -53,7 +53,6 @@ lstb.App = Backbone.Model.extend({
 			
 			lstb.trigger('route', router, route, params);
 
-
 			switch (router) {
 				case 'explore':
 					this.explore.render();

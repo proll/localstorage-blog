@@ -7,7 +7,20 @@
 .post__header {
 	padding: 40px 0;
 	text-align: right;
+
+
+	a {
+		width: 40px;
+		display: inline-block;
+		vertical-align: middle;
+	}
 }
+	.post__back {
+		float: left;
+		font-size: 2em;
+		line-height: 40px;
+		width: auto;
+	}
 
 .post__form {
 	display: block;
@@ -15,12 +28,13 @@
 
 
 	.post__title {
+		.transition(border-color .3s);
 		font-size: 2em;
 		font-family: @sansFontFamily;
 		.input_clear;
 		display: block;
 		border: 1px solid @gray;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		padding: 0 10px;
 
 		&[disabled] {
@@ -31,6 +45,7 @@
 	}
 
 	.post__content {
+		.transition(border-color .3s);
 		font-family: @sansFontFamily;
 		.input_clear;
 		display: block;

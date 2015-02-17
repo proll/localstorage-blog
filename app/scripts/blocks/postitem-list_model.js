@@ -48,6 +48,9 @@ lstb.PostItemList = Backbone.Model.extend({
 				this.trigger("needmore");
 			}, this);
 		}
+
+
+
 	},
 
 	addPost: function (model, collection, options) {
@@ -90,9 +93,55 @@ lstb.PostItemList = Backbone.Model.extend({
 		this.set("offset", this.defaults.offset);
 		this.set("sleeped", false);
 		this.trigger("needmore");
+
+		this.hSfunc = _.bind(this.handleStorage, this);
+		if (window.addEventListener) {
+			window.addEventListener('storage', this.hSfunc, false);
+		} else {
+			window.attachEvent("onstorage", this.hSfunc);
+		};
+	},
+
+	handleStorage: function(e) {
+		if (!e) { 
+			e = window.event; 
+		}
+
+		console.log(e);
+		var posts = []
+
+		if(e.key) {
+			// if we have post in loaded collection
+			if(this.collection.length) {
+				posts = this.collection.where({key: parseInt(e.key)});
+				if(posts.length) {
+					_.forEach(posts, function(post_model) {
+						post_model.set(_.toJSON(e.newValue));
+						post_model.fetch();
+					})
+				} else {
+					posts = lstb.dataStorage.getData('/posts/');
+					if(!posts || !posts.length) {
+						posts = [];
+					}
+					if( !e.oldValue ) {
+						this.collection.unshift(_.toJSON(e.newValue))
+					} else {
+						// if we have NO post in loaded collection and at all
+						// DO NOTHING
+					}
+				}
+			}
+		}
 	},
 
 	sleep: function() {
 		this.set("sleeped", true);
+
+		if(window.removeEventListener) {
+			window.removeEventListener('storage', this.hSfunc)
+		} else {
+			window.detachEvent("onstorage", this.hSfunc);
+		}
 	},
 });
