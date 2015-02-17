@@ -1,0 +1,46 @@
+// Photo page + popup
+.photo-row {
+	max-width: 730px;
+	margin: 0 auto;
+}
+
+.post__header {
+	padding: 40px 0;
+	text-align: right;
+}
+
+.post__form {
+	display: block;
+}
+
+
+	.post__title {
+		font-size: 2em;
+		font-family: @sansFontFamily;
+		.input_clear;
+		display: block;
+		border: 1px solid @gray;
+		margin-bottom: 20px;
+		padding: 0 10px;
+
+		&[disabled] {
+			border: none;
+			cursor: auto;
+			color: @black;
+		}
+	}
+
+	.post__content {
+		font-family: @sansFontFamily;
+		.input_clear;
+		display: block;
+		border: 1px solid @gray;
+		height: 276px;
+		padding: 10px;
+
+		&[disabled] {
+			color: @black;
+			border: none;
+			cursor: auto;
+		}
+	}

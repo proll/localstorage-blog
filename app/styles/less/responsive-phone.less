@@ -1,0 +1,40 @@
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+@media (min-width: @gridRowWidthPhone) and (max-width: @gridRowMaxWidthPhone)  {
+	.container {
+		width: @gridRowWidthTablet;
+	}
+
+	.span3 {
+		display: none;
+	}
+
+	.span10 {
+		width: @gridRowWidthPhone;
+	}
+}
+
+
+@media (max-width: @gridRowMinWidthPhone) {
+	.container {
+		width: auto;
+		// min-width: 300px;
+	}
+
+	[class*="span"] {
+		float: none;
+		display: block;
+		width: 100%;
+		margin-left: 0;
+		.box-sizing(border-box);
+	}
+
+	.row {
+		margin-left: 0;
+	}
+
+	.span3 {
+		display: none;
+	}
+}

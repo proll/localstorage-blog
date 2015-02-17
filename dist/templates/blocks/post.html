@@ -1,0 +1,11 @@
+<div class="post__header">
+{{#if can_edit}}
+    <button>Save</button>
+{{else}}
+    <a class="btn" href="/post/{{key}}/edit">Edit</a>
+{{/if}}
+</div>
+<form action="" class="post__form">
+    <input type="text" class="post__title"{{#unless can_edit}} disabled="disabled"{{/unless}} value="{{title}}">
+    <textarea class="post__content"{{#unless can_edit}} disabled="disabled"{{/unless}}>{{content}}</textarea>
+</form>
