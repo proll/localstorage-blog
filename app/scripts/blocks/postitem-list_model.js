@@ -3,7 +3,7 @@ lstb.PostItemList = Backbone.Model.extend({
 	
 	defaults: {
 		offset: 	0,
-		limit: 		10,
+		limit: 		8,
 
 		loading: 	false,
 		sleeped: 	true,
@@ -130,6 +130,14 @@ lstb.PostItemList = Backbone.Model.extend({
 						// if we have NO post in loaded collection and at all
 						// DO NOTHING
 					}
+				}
+			} else {
+				if( !e.oldValue ) {
+					this.collection.unshift(_.toJSON(e.newValue))
+					this.collection.trigger('load:success')
+				} else {
+					// if we have NO post in loaded collection and at all
+					// DO NOTHING
 				}
 			}
 		}

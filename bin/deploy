@@ -78,13 +78,6 @@ var commands = {
 			gruntCli();	
 		}
 	},
-	"squeeze": {
-		"description": "Replaces and concatenates js/css in special HTML comment blocks and compress js/css/html",
-		"command": function(options){
-			gruntCli.tasks = ["squeeze"];
-			gruntCli();
-		}
-	},
 	"server": {
 		"description": "Starts local server",
 		"command": function(){

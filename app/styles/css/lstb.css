@@ -38,37 +38,7 @@ object:focus,div:focus,object:active,div:active{outline:0 none !important;-moz-o
 @media print{*{text-shadow:none !important;color:#000 !important;background:transparent !important;box-shadow:none !important;} a,a:visited{text-decoration:underline;} a[href]:after{content:" (" attr(href) ")";} abbr[title]:after{content:" (" attr(title) ")";} .ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:"";} pre,blockquote{border:1px solid #999;page-break-inside:avoid;} thead{display:table-header-group;} tr,img{page-break-inside:avoid;} img{max-width:100% !important;} @page {margin:0.5cm;}p,h2,h3{orphans:3;widows:3;} h2,h3{page-break-after:avoid;}}body{margin:0;font-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:20px;color:#000000;background-color:#ffffff;}
 a{color:#005abe;text-decoration:none;}
 a:hover,a:focus{color:#003672;text-decoration:underline;}
-.row{margin-left:-40px;*zoom:1;}.row:before,.row:after{display:table;content:"";line-height:0;}
-.row:after{clear:both;}
-[class*="span"]{float:left;min-height:1px;margin-left:40px;}
-.container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container{width:1280px;}
-.span12{width:1280px;}
-.span11{width:1170px;}
-.span10{width:1060px;}
-.span9{width:950px;}
-.span8{width:840px;}
-.span7{width:730px;}
-.span6{width:620px;}
-.span5{width:510px;}
-.span4{width:400px;}
-.span3{width:290px;}
-.span2{width:180px;}
-.span1{width:70px;}
-.offset12{margin-left:1360px;}
-.offset11{margin-left:1250px;}
-.offset10{margin-left:1140px;}
-.offset9{margin-left:1030px;}
-.offset8{margin-left:920px;}
-.offset7{margin-left:810px;}
-.offset6{margin-left:700px;}
-.offset5{margin-left:590px;}
-.offset4{margin-left:480px;}
-.offset3{margin-left:370px;}
-.offset2{margin-left:260px;}
-.offset1{margin-left:150px;}
-[class*="span"].hide{display:none;}
-[class*="span"].pull-right{float:right;}
-.container{margin-right:auto;margin-left:auto;*zoom:1;}.container:before,.container:after{display:table;content:"";line-height:0;}
+.container{margin-right:auto;margin-left:auto;*zoom:1;width:86%;}.container:before,.container:after{display:table;content:"";line-height:0;}
 .container:after{clear:both;}
 .container-fluid{padding-right:40px;padding-left:40px;*zoom:1;}.container-fluid:before,.container-fluid:after{display:table;content:"";line-height:0;}
 .container-fluid:after{clear:both;}
@@ -120,4 +90,4 @@ input[type=search]{margin-bottom:0;font-size:12px;width:30ex;}input[type=search]
 .hidden-desktop{display:none !important;}
 .visible-desktop{display:inherit !important;}
 @media (min-width:950px) and (max-width:1279px){.hidden-desktop{display:inherit !important;} .visible-desktop{display:none !important ;} .visible-tablet{display:inherit !important;} .hidden-tablet{display:none !important;}}@media (max-width:949px){.hidden-desktop{display:inherit !important;} .visible-desktop{display:none !important;} .visible-phone{display:inherit !important;} .hidden-phone{display:none !important;}}.visible-print{display:none !important;}
-@media print{.visible-print{display:inherit !important;} .hidden-print{display:none !important;}}@media (min-width:1280px){.container{width:1280px;} .container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container{width:1280px;} .body__page-photofeed #lstb-container{width:100%;overflow:hidden;} .span10{width:950px;} .span6{width:510px;}}@media (min-width:950px) and (max-width:1279px){.container{width:950px;}}@media (min-width:640px) and (max-width:949px){.container{width:950px;} .span3{display:none;} .span10{width:640px;}}@media (max-width:639px){.container{width:auto;} [class*="span"]{float:none;display:block;width:100%;margin-left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;} .row{margin-left:0;} .span3{display:none;}}
+@media print{.visible-print{display:inherit !important;} .hidden-print{display:none !important;}}@media (min-width:1280px){}@media (min-width:950px) and (max-width:1279px){}@media (min-width:640px) and (max-width:949px){}@media (max-width:639px){}
